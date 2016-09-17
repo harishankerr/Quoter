@@ -1,4 +1,7 @@
 <?php
+
+// Register the Custom Post Type - 'quote_display', to create Quotes.
+
 add_action( 'init', 'qtd_create_post_type' );
 function qtd_create_post_type() {
   register_post_type( 'quote_display',
@@ -28,6 +31,8 @@ function qtd_create_post_type() {
     )
   );
 }
+
+// Register Custom Taxonomies - Quote Categories & Quote Authors for the Custom Post Type. 
 
 function qtd_register_quote_type() {
 // set up labels
