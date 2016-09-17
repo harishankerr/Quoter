@@ -29,3 +29,20 @@ function qtd_quote_display( $content ) {
 }
 
 add_shortcode('quotes', 'qtd_quote_display');
+
+
+function qtd_your_quote( $atts ) {
+  	if ( ! $atts['id'] ) {
+    	return __('Sorry!');
+  	}
+
+	$post_id = $atts['id'];
+	$queried_post = get_post($post_id);
+	$title = $queried_post->post_title;
+	$content = $queried_post->post_content;?>
+	<h3><?php echo $content;?></h3>
+	<p><?php echo  $title; ?></p>
+<?php
+}
+add_shortcode('quote', 'qtd_your_quote');
+
