@@ -12,10 +12,6 @@ Text Domain: wporg
 Domain Path: /languages
 */
 
-error_log(print_r($_SERVER, true));
-error_log(print_r($_POST, true));
-error_log(print_r($_GET, true));
-
 require_once( plugin_dir_path( __FILE__ ) . 'register-quote.php');
 require_once( plugin_dir_path( __FILE__ ) . 'quote-widget.php');
 
@@ -30,4 +26,3 @@ while ($quote->have_posts()) : $quote->the_post(); ?>
 <?php endwhile; wp_reset_postdata(); 
 }
 add_shortcode('quotes', 'quote_display');
-?>

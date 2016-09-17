@@ -76,6 +76,3 @@ function register_quote_author() {
 
 }
 add_action( 'init', 'register_quote_author' );
-
-
-?>
