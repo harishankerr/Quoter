@@ -12,17 +12,16 @@ Text Domain: wporg
 Domain Path: /languages
 */
 
-require_once( plugin_dir_path( __FILE__ ) . 'register-quote.php');
-require_once( plugin_dir_path( __FILE__ ) . 'quote-widget.php');
-
-
-function quote_display( $content ) {
-remove_all_filters('posts_orderby'); 
-$args=array('post_type'=>'quote_display', 'orderby'=>'rand', 'posts_per_page'=>'1'); 
-$quote=new WP_Query($args); 
-while ($quote->have_posts()) : $quote->the_post(); ?> 
-<h3><?php esc_html('quote', the_content());?></h3>
-<p><?php esc_html('quote-author-name', the_title()); ?></p> 
-<?php endwhile; wp_reset_postdata(); 
+include( plugin_dir_path( __FILE__ ) . 'register-quote.php');
+include( plugin_dir_path( __FILE__ ) . 'quote-widget.php');
+function qtd_quote_display( $content ) {
+	remove_all_filters('posts_orderby'); 
+	$args=array('post_type'=>'quote_display', 'orderby'=>'rand', 'posts_per_page'=>'1'); 
+	$quote=new WP_Query($args); 
+	while ($quote->have_posts()) : $quote->the_post(); ?> 
+		<h3><?php esc_html('quote', the_content());?></h3>
+		<p><?php esc_html('quote-author-name', the_title()); ?></p> 
+	<?php endwhile; wp_reset_postdata(); 
 }
-add_shortcode('quotes', 'quote_display');
+
+add_shortcode('quotes', 'qtd_quote_display');
