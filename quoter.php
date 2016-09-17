@@ -25,7 +25,7 @@ remove_all_filters('posts_orderby');
 $args=array('post_type'=>'quote_display', 'orderby'=>'rand', 'posts_per_page'=>'1'); 
 $quote=new WP_Query($args); 
 while ($quote->have_posts()) : $quote->the_post(); ?> 
-<h2><?php esc_html('quote', the_content());?></h2>
+<h3><?php esc_html('quote', the_content());?></h3>
 <p><?php esc_html('quote-author-name', the_title()); ?></p> 
 <?php endwhile; wp_reset_postdata(); 
 }
