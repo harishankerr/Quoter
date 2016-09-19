@@ -31,8 +31,8 @@ public function widget( $args, $instance ) {
 	$myquery=array('post_type'=>'quote_display', 'orderby'=>'rand', 'posts_per_page'=>'1'); 
 	$quote=new WP_Query($myquery); 
 	while ($quote->have_posts()) : $quote->the_post(); ?> 
-	<h4><?php esc_html('quote', the_content());?></h4>
-	<p><?php esc_html('quote-author-name', the_title()); ?></p> 
+		<p><strong><?php esc_html('quote', the_content());?></strong></p>
+		<p><?php esc_html('quote-author-name', the_title()); ?></p> 
 	<?php endwhile; wp_reset_postdata(); 
 	echo $args['after_widget'];
 }
