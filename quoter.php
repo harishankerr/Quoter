@@ -28,7 +28,7 @@ function qtd_quote_display( $content ) {
 				<?php esc_html('quote', the_content());?>
 			</blockquote>
 		</strong>
-		<p style = "text-align: right;">
+		<p>
 			<strong>
 				<?php echo "&mdash;"; esc_html('quote-author-name', the_title()); ?>
 			</strong>
@@ -54,7 +54,7 @@ function qtd_your_quote( $atts ) {
 			<?php echo $content;?>
 		</blockquote>
 	</strong>
-	<p style = "text-align: right;">
+	<p>
 		<strong>
 			<?php echo "&mdash;".$title; ?>
 		</strong>
