@@ -11,7 +11,7 @@ Quoter displays a random quote (or a quote of your choice) anywhere in your webs
 
 == Description ==
 
-Quoter is a pretty-straightforward plugin. You can use this to createa a database of quotes within WP-Admin and display it in your site using the shortcode `[quotes]`. 
+Quoter is a pretty-straightforward plugin. You can use this to create a database of quotes within WP-Admin and display it in your site using the shortcode `[quotes]`. 
 
 It also has  a handy widget that you can use to display it anywhere in your website. 
 
