@@ -23,8 +23,16 @@ function qtd_quote_display( $content ) {
 	$args=array('post_type'=>'quote_display', 'orderby'=>'rand', 'posts_per_page'=>'1'); 
 	$quote=new WP_Query($args); 
 	while ($quote->have_posts()) : $quote->the_post(); ?> 
-		<blockquote><?php esc_html('quote', the_content());?></blockquote>
-		<p style = "text-align: right;"><?php echo "&mdash;"; esc_html('quote-author-name', the_title()); ?></p> 
+		<strong>
+			<blockquote>
+				<?php esc_html('quote', the_content());?>
+			</blockquote>
+		</strong>
+		<p style = "text-align: right;">
+			<strong>
+				<?php echo "&mdash;"; esc_html('quote-author-name', the_title()); ?>
+			</strong>
+		</p> 
 	<?php endwhile; wp_reset_postdata(); 
 }
 
@@ -41,8 +49,16 @@ function qtd_your_quote( $atts ) {
 	$queried_post = get_post($post_id);
 	$title = $queried_post->post_title;
 	$content = $queried_post->post_content;?>
-	<blockquote><?php echo $content;?></blockquote>
-	<p style = "text-align: right;"><?php echo "&mdash;".$title; ?></p>
+	<strong>
+		<blockquote>
+			<?php echo $content;?>
+		</blockquote>
+	</strong>
+	<p style = "text-align: right;">
+		<strong>
+			<?php echo "&mdash;".$title; ?>
+		</strong>
+	</p>
 <?php
 }
 add_shortcode('quote', 'qtd_your_quote');
