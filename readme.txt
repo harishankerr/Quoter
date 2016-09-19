@@ -27,7 +27,8 @@ Features
 1. Upload the plugin files to the `/wp-content/plugins/quoter` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. Add your set of quotes in the `Quotes` section that now populates in your WP-Admin.
-4. Add the Quote Widget to your sidebar, or, use the shortcode `[quotes]` to display the quote in your site. 
+4. Add the Quote Widget to your sidebar, or, use the shortcode `[quotes]` to display a random quote from among the list of quotes, in your site. 
+5. You can also use the shortcode `[quote id = "post_id"]` to display a particular quote, based on its post id. 
 
 == Changelog ==
 
@@ -35,4 +36,6 @@ Features
 * Added Custom Post Type for Quotes.
 * Added Taxonomy (Author names & Quote categories).
 * Added shortcode `[quotes]` to display quote in any location. 
+* Added shortcode `[quote id = 'post_id']` to display a quote of your choice at any location.
+* Changed quote styling. 
 * Added a Widget.
