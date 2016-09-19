@@ -7,7 +7,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Quoter displays a random quote anywhere in your website using shortcodes and/or widgets.
+Quoter displays a random quote (or a quote of your choice) anywhere in your website using shortcodes and/or widgets.
 
 == Description ==
 
