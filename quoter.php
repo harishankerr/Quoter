@@ -24,9 +24,9 @@ function qtd_quote_display( $content ) {
 	$quote=new WP_Query($args); 
 	while ($quote->have_posts()) : $quote->the_post(); ?> 
 		<strong>
-			<blockquote>
+			<h3>
 				<?php esc_html('quote', the_content());?>
-			</blockquote>
+			</h3>
 		</strong>
 		<p>
 			<strong>
@@ -50,9 +50,9 @@ function qtd_your_quote( $atts ) {
 	$title = $queried_post->post_title;
 	$content = $queried_post->post_content;?>
 	<strong>
-		<blockquote>
+		<h3>
 			<?php echo $content;?>
-		</blockquote>
+		</h3>
 	</strong>
 	<p>
 		<strong>
