@@ -19,21 +19,14 @@ include( plugin_dir_path( __FILE__ ) . 'quote-widget.php');
 
 // This function creates the shortcode and finds a random quote from the list of quotes available as custom post types.
 function qtd_quote_display( $content ) {
-	remove_all_filters('posts_orderby'); 
 	$args=array('post_type'=>'quote_display', 'orderby'=>'rand', 'posts_per_page'=>'1'); 
 	$quote=new WP_Query($args); 
-	while ($quote->have_posts()) : $quote->the_post(); ?> 
-		<strong>
-			<blockquote>
-				<?php esc_html('quote', the_content());?>
-			</blockquote>
-		</strong>
-		<p>
-			<strong>
-				<?php echo "&mdash;"; esc_html('quote-author-name', the_title()); ?>
-			</strong>
-		</p> 
-	<?php endwhile; wp_reset_postdata(); 
+	while ($quote->have_posts()) : $quote->the_post(); 
+		$qtd_quote = get_the_content();
+		$qtd_quote_author = get_the_title();
+		$qtd_quote_final = '<strong><blockquote>'.$qtd_quote.'</blockquote></strong><p style = "text-align: right;"><strong>&mdash;'.$qtd_quote_author.'</strong></p>';
+		return $qtd_quote_final;
+	endwhile; wp_reset_postdata(); 
 }
 
 add_shortcode('quotes', 'qtd_quote_display');
@@ -44,22 +37,12 @@ function qtd_your_quote( $atts ) {
   	if ( ! $atts['id'] ) {
     	return __('Sorry!');
   	}
-
 	$post_id = $atts['id'];
 	$queried_post = get_post($post_id);
 	$title = $queried_post->post_title;
-	$content = $queried_post->post_content;?>
-	<strong>
-		<blockquote>
-			<?php echo $content;?>
-		</blockquote>
-	</strong>
-	<p>
-		<strong>
-			<?php echo "&mdash;".$title; ?>
-		</strong>
-	</p>
-<?php
+	$content = $queried_post->post_content;
+	$qtd_single_quote = '<strong><blockquote>'.$content.'</blockquote></strong><p style = "text-align: right;"><strong>&mdash;'.$title.'</strong></p>';
+	return $qtd_single_quote;
 }
 add_shortcode('quote', 'qtd_your_quote');
 

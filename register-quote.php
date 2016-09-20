@@ -22,7 +22,7 @@ function qtd_create_post_type() {
         'menu_name' => __('Quotes'),
       ),
       'public' => true,
-      'has_archive' => true,
+      'has_archive' => false,
       'public' => true,
       'supports' => array('title', 'editor', 'excerpt', 'custom-fields', 'thumbnail','page-attributes' ),
       'exclude_from_search' => false,
