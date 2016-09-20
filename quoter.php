@@ -19,13 +19,15 @@ include( plugin_dir_path( __FILE__ ) . 'quote-widget.php');
 
 // This function creates the shortcode and finds a random quote from the list of quotes available as custom post types.
 function qtd_quote_display( $content ) {
-	remove_all_filters('posts_orderby'); 
+//	remove_all_filters('posts_orderby'); 
 	$args=array('post_type'=>'quote_display', 'orderby'=>'rand', 'posts_per_page'=>'1'); 
 	$quote=new WP_Query($args); 
-	while ($quote->have_posts()) : $quote->the_post(); ?> 
-		<h3><?php esc_html('quote', the_content());?></h3>
+	while ($quote->have_posts()) : $quote->the_post(); 
+/*		<h3><?php esc_html('quote', the_content());?></h3>
 		<p><?php esc_html('quote-author-name', the_title()); ?></p> 
-	<?php endwhile; wp_reset_postdata(); 
+	<?php endwhile; wp_reset_postdata(); */?>
+<?php
+
 }
 
 add_shortcode('quotes', 'qtd_quote_display');
