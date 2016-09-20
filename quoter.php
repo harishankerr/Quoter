@@ -29,7 +29,7 @@ function qtd_quote_display( $content ) {
 	endwhile; wp_reset_postdata(); 
 }
 
-add_shortcode('quotes', 'qtd_quote_display');
+add_shortcode('showquotes', 'qtd_quote_display');
 
 // This function creates a separate shortcode so that you can display any quote of your choice using the post id.
 
@@ -44,5 +44,5 @@ function qtd_your_quote( $atts ) {
 	$qtd_single_quote = '<strong><blockquote>'.$content.'</blockquote></strong><p style = "text-align: right;"><strong>&mdash;'.$title.'</strong></p>';
 	return $qtd_single_quote;
 }
-add_shortcode('quote', 'qtd_your_quote');
+add_shortcode('showquote', 'qtd_your_quote');
 
