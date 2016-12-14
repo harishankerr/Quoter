@@ -24,7 +24,7 @@ function qtd_quote_display( $content ) {
 	while ($quote->have_posts()) : $quote->the_post(); 
 		$qtd_quote = get_the_content();
 		$qtd_quote_author = get_the_title();
-		$qtd_quote_final = '<strong><blockquote>'.$qtd_quote.'</blockquote></strong><p style = "text-align: right;"><strong>&mdash;'.$qtd_quote_author.'</strong></p>';
+		$qtd_quote_final = '<strong><blockquote>'.$qtd_quote.'</blockquote></strong><p style = "text-align: left;"><strong>&mdash;'.$qtd_quote_author.'</strong></p>';
 		return $qtd_quote_final;
 	endwhile; wp_reset_postdata(); 
 }
@@ -41,7 +41,7 @@ function qtd_your_quote( $atts ) {
 	$queried_post = get_post($post_id);
 	$title = $queried_post->post_title;
 	$content = $queried_post->post_content;
-	$qtd_single_quote = '<strong><blockquote>'.$content.'</blockquote></strong><p style = "text-align: right;"><strong>&mdash;'.$title.'</strong></p>';
+	$qtd_single_quote = '<strong><blockquote>'.$content.'</blockquote></strong><p style = "text-align: left;"><strong>&mdash;'.$title.'</strong></p>';
 	return $qtd_single_quote;
 }
 add_shortcode('showquote', 'qtd_your_quote');
