@@ -3,7 +3,7 @@ Contributors: harishanker
 Tags: quotes, custom posts, widgets, shortcodes, quote display
 Requires at least: 3.0.1
 Tested up to: 4.6.1
-Stable tag: 1.0
+Stable tag: 0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,7 @@ Quoter displays a random quote (or a quote of your choice) anywhere in your webs
 
 == Description ==
 
-Quoter is a pretty-straightforward plugin. You can use this to create a database of quotes within WP-Admin and display it in your site using the shortcode `[quotes]`. 
+Quoter is a straightforward plugin. You can use this to create a database of quotes within WP-Admin and display it in your site using the shortcode `[showquotes]`. 
 
 It also has  a handy widget that you can use to display it anywhere in your website. 
 
